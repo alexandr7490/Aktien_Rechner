@@ -1,0 +1,2 @@
+Das Programm soll den Wert der Wertpapiere berechnen und darstellen. Der Nutzer gibt den Wertpapiernamen, das Datum und (optional) den Kaufpreis ein. Der Preis der Aktien wird automatisch von der entsprechenden Website gelesen und in einer MySQL-Datenbank gespeichert. Die Nutzer und die ihnen zugehörigen Wertpapiere werden durch JPA-Entities gespeichert.
+Hier kommt später ein Bild mit den Beziehungen zwischen den Entities.
