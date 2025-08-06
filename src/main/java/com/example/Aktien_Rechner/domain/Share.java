@@ -2,7 +2,8 @@ package com.example.Aktien_Rechner.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.springframework.boot.autoconfigure.web.WebProperties;
+
+import java.math.BigDecimal;
 
 @Data
 @Entity
@@ -12,8 +13,5 @@ public class Share {
     private Long id;
     private String name;
     private String shortName;
-    private Integer actualPrice;
-    @OneToMany
-    @JoinColumn(name="order")
-    private Order order;
+    private BigDecimal actualPrice;
 }
