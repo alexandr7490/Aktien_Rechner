@@ -11,6 +11,9 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private double quantity;
+    private double price;
+    private Date timestamp;
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
@@ -19,7 +22,5 @@ public class Transaction {
     private Share share;
     @Enumerated(EnumType.STRING)
     private TransactionType type;
-    private double quantity;
-    private double price;
-    private Date timestamp;
+
 }

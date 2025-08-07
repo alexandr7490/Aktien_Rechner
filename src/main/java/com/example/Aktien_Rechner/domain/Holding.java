@@ -9,11 +9,12 @@ public class Holding {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private double quantity;
     @ManyToOne
     @JoinColumn(name = "portfolio_id")
     private Portfolio portfolio;
     @ManyToOne
     @JoinColumn(name = "share_id")
     private Share share;
-    private double quantity;
+
 }
