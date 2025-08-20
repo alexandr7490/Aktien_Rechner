@@ -10,11 +10,11 @@ import org.springframework.stereotype.Component;
 public class TransactionCommandToTransaction implements Converter<TransactionCommand, Transaction> {
 
     private final ShareCommandToShare shareConverter;
-    private final UserCommandToUser userConverter;
 
-    public TransactionCommandToTransaction(ShareCommandToShare shareConverter, UserCommandToUser userConverter) {
+
+    public TransactionCommandToTransaction(ShareCommandToShare shareConverter) {
         this.shareConverter = shareConverter;
-        this.userConverter = userConverter;
+
     }
 
 
@@ -31,7 +31,7 @@ public class TransactionCommandToTransaction implements Converter<TransactionCom
         transaction.setPrice(transactionCommand.getPrice());
         transaction.setTimestamp(transactionCommand.getTimestamp());
         transaction.setType(transactionCommand.getType());
-        transaction.setUser(userConverter.convert(transactionCommand.getUser()));
+
         transaction.setShare(shareConverter.convert(transactionCommand.getShare()));
 
         return transaction;

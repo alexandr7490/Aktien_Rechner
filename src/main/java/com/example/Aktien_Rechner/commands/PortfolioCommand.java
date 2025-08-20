@@ -10,6 +10,5 @@ import java.util.List;
 @Data
 public class PortfolioCommand {
     private Long id;
-    private UserCommand user;
     private List<HoldingCommand> holdings = new ArrayList<>();
 }

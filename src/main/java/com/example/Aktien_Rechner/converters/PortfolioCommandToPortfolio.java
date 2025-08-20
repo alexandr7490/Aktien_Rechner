@@ -10,11 +10,10 @@ import org.springframework.stereotype.Component;
 public class PortfolioCommandToPortfolio implements Converter<PortfolioCommand, Portfolio> {
 
     private final HoldingCommandToHolding holdingConverter;
-    private final UserCommandToUser userConverter;
 
-    public PortfolioCommandToPortfolio(HoldingCommandToHolding holdingConverter, UserCommandToUser userConverter) {
+    public PortfolioCommandToPortfolio(HoldingCommandToHolding holdingConverter) {
         this.holdingConverter = holdingConverter;
-        this.userConverter = userConverter;
+
     }
 
     @Nullable
@@ -26,7 +25,6 @@ public class PortfolioCommandToPortfolio implements Converter<PortfolioCommand, 
 
         final Portfolio portfolio = new Portfolio();
         portfolio.setId(portfolioCommand.getId());
-        portfolio.setUser(userConverter.convert(portfolioCommand.getUser()));
 
         if (portfolioCommand.getHoldings() != null && portfolioCommand.getHoldings().size() > 0){
             portfolioCommand.getHoldings()

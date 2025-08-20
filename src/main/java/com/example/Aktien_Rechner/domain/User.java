@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.List;
 
 @Entity
+@Table(name = "APP_USER")
 @Data
 public class User {
     @Id

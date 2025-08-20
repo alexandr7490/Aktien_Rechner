@@ -6,14 +6,15 @@ import com.example.Aktien_Rechner.domain.User;
 import lombok.Data;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 
 @Data
 public class TransactionCommand {
     private Long id;
     private double quantity;
     private double price;
-    private Date timestamp;
-    private UserCommand user;
+    private LocalDateTime timestamp;
+
     private ShareCommand share;
     private TransactionType type;
 }
