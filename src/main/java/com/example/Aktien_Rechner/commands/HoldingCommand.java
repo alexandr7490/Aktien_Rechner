@@ -8,6 +8,6 @@ import lombok.Data;
 public class HoldingCommand {
     private Long id;
     private double quantity;
-    private PortfolioCommand portfolio;
+
     private ShareCommand share;
 }

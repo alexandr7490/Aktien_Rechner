@@ -9,11 +9,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class HoldingToHoldingCommand implements Converter<Holding, HoldingCommand> {
 
-    private final PortfolioToPortfolioCommand portfolioConverter;
     private final ShareToShareCommand shareConverter;
 
-    public HoldingToHoldingCommand(PortfolioToPortfolioCommand portfolioConverter, ShareToShareCommand shareConverter) {
-        this.portfolioConverter = portfolioConverter;
+    public HoldingToHoldingCommand(ShareToShareCommand shareConverter) {
         this.shareConverter = shareConverter;
     }
 
@@ -27,7 +25,6 @@ public class HoldingToHoldingCommand implements Converter<Holding, HoldingComman
         final HoldingCommand holdingCommand = new HoldingCommand();
         holdingCommand.setId(holding.getId());
         holdingCommand.setQuantity(holding.getQuantity());
-        holdingCommand.setPortfolio(portfolioConverter.convert(holding.getPortfolio()));
         holdingCommand.setShare(shareConverter.convert(holding.getShare()));
 
         return holdingCommand;
