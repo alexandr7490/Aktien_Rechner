@@ -15,6 +15,7 @@ public class IndexController {
         this.shareService = shareService;
     }
 
+
     @RequestMapping({"","/shares"})
     public String getSharesPage(Model model){
         model.addAttribute("shares", shareService.getShares());
