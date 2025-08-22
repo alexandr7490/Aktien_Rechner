@@ -25,8 +25,9 @@ public class UserBootstrap implements ApplicationListener<ContextRefreshedEvent>
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
-        userRepository.saveAll(getUsers());
+
         shareRepository.saveAll(getShares());
+        userRepository.saveAll(getUsers());
     }
 
     private List<Share> getShares() {
@@ -164,7 +165,7 @@ public class UserBootstrap implements ApplicationListener<ContextRefreshedEvent>
         trans2_user2.setType(TransactionType.BUY);
         trans2_user2.setTimestamp(LocalDateTime.of(2020, 2, 1, 12, 30,11));
         trans2_user2.setShare(shareRepository.findByName("Apple"));
-        transaction_user1.add(trans2_user2);
+        transaction_user2.add(trans2_user2);
 
         Transaction trans3_user2 = new Transaction();
         trans3_user2.setUser(user2);
@@ -175,7 +176,7 @@ public class UserBootstrap implements ApplicationListener<ContextRefreshedEvent>
         trans3_user2.setShare(shareRepository.findByName("Microsoft"));
         transaction_user2.add(trans3_user2);
 
-        user2.setTransactions(transaction_user1);
+        user2.setTransactions(transaction_user2);
 
         users.add(user2);
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%_ENDE USER2
@@ -223,6 +224,7 @@ public class UserBootstrap implements ApplicationListener<ContextRefreshedEvent>
         trans2_user3.setShare(shareRepository.findByName("Schneider"));
         transaction_user3.add(trans2_user3);
 
+        //user3.setTransactions(transaction_user3);
         users.add(user3);
 
         return users;
