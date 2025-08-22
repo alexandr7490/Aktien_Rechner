@@ -30,6 +30,9 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User findById(Long id) {
+        if (id == null) {
+            throw new IllegalArgumentException("User ID cannot be null");
+        }
         Optional<User> userOptional = userRepository.findById(id);
         if (userOptional.isEmpty()){
             throw new RuntimeException("User not found.");//Можно добавить своё иключение!
