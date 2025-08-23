@@ -119,6 +119,17 @@ public class UserBootstrap implements ApplicationListener<ContextRefreshedEvent>
         trans3_user1.setShare(shareRepository.findByName("Apple"));
         transaction_user1.add(trans3_user1);
 
+        for (int i=0;i<100;i++){
+            Transaction transI = new Transaction();
+            transI.setUser(user1);
+            transI.setQuantity(i+1);
+            transI.setPrice(80+i);
+            transI.setType(TransactionType.BUY);
+            transI.setTimestamp(LocalDateTime.of(2000+i/2, 1, 1+i/4, 12, 30));
+            transI.setShare(shareRepository.findByName("Apple"));
+            transaction_user1.add(transI);
+        }
+
         user1.setTransactions(transaction_user1);
 
         users.add(user1);
