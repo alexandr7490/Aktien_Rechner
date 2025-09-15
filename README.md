@@ -1,4 +1,5 @@
 Dies ist ein Ausbildungsprojekt zur Vertiefung der Kenntnisse in Java und Spring Boot. Das Ziel des Projekts besteht darin, ein korrekt arbeitendes Web-Anwendung zu erstellen, das aktuellen Anforderungen in der Branche entspricht.
 Das Programm dient der Berechnung und Aktualisierung von Informationen zu den Wertpapieren des Nutzers. Außerdem wird die Dynamik der Wertänderung angezeigt. Im nächsten Bild ist die allgemeine Struktur und die Beziehungen zwischen den Objekten dargestellt.
 <img width="631" height="467" alt="Bild" src="https://github.com/user-attachments/assets/ce422983-2e98-4b93-b4bd-7ba5bdaee474" />
+
 Der Hauptszenario der Nutzung: Der Benutzer fügt manuell oder mithilfe eines Parsers Informationen zu abgeschlossenen Transaktionen (Kauf/Verkauf) mit Wertpapieren hinzu. Auf dieser Grundlage werden die vorhandenen Wertpapiere, ihre Kosten, die Kostenänderung usw. berechnet. Die aktuelle Wertentwicklung wird automatisch auf Basis der von der Börse erhaltenen Daten berechnet. Es besteht auch die Möglichkeit, Aktien manuell hinzuzufügen, ohne eine entsprechende Transaktion zu erstellen.
